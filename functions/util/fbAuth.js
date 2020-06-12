@@ -1,8 +1,5 @@
 const { admin, db } = require('./admin');
 
-const serviceAccount = require("../../socialapp-12ef9-firebase-adminsdk-pl9i4-056d1d9c8e.json");
-
-
 module.exports = (req, res, next) => {
   let idToken;
   if (
