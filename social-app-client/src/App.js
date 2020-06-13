@@ -23,13 +23,17 @@ import signup from './pages/signup';
 const theme = createMuiTheme(themeFile);
 
 const token = localStorage.FBIdToken;
-
+console.log(token);
 let authenticated;
 if (token){
   const decodededToken = jwtDecode(token);
   if (decodededToken.exp * 1000 < Date.now()){
+    console.log('token', token)
+    console.log('time to expire', decodededToken.exp * 1000)
     authenticated = false
   } else {
+console.log("token", token);
+console.log("time to expire", decodededToken.exp * 1000);
     authenticated = true
   }
 }
