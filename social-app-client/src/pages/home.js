@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 
+import Scream from '../components/Scream';
+
 export class home extends Component {
     state = {
         screams: []
@@ -18,7 +20,7 @@ export class home extends Component {
     }
     render() {
         const screams = this.state.screams.map(scream => (
-            <p key={scream.screamId}>{scream.body}</p>
+            <Scream key={scream.screamId} scream={scream} />
         ))
         return (
           <Grid container spacing={8}>
