@@ -19,6 +19,9 @@ import EditIcon from "@material-ui/icons/Edit";
 
 const styles = (theme) => ({
     ...theme.spreadIt,
+    button: {
+        float: 'right'
+    }
 })
 
 
