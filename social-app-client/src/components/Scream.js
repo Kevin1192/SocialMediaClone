@@ -8,7 +8,6 @@ import MyButton from '../util/MyButton';
 import DeleteScream from './DeleteScream';
 import ScreamDialog from './ScreamDialog';
 import LikeButton from './LikeButton';
-
 // Card
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -24,6 +23,7 @@ import { connect } from "react-redux";
 
 const styles = {
   card: {
+    position: 'relative',
     display: "flex",
     marginBottom: 20,
   },
@@ -55,9 +55,10 @@ export class Scream extends Component {
         credentials: { handle },
       },
     } = this.props;
+
     const deleteButton =
       authenticated && userHandle === handle ? (
-        <deleteScream screamId={screamId} />
+        <DeleteScream screamId={screamId} />
       ) : null;
     return (
       <Card className={classes.card}>
@@ -75,6 +76,7 @@ export class Scream extends Component {
           >
             {userHandle}
           </Typography>
+          {deleteButton}
           <Typography variant="body2" color="textSecondary">
             {dayjs(createdAt).fromNow()}
           </Typography>

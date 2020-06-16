@@ -44,12 +44,13 @@ export default function(state = initialState, action) {
                 scream: action.payload
             };
         case DELETE_SCREAM: 
-            index = state.screams.findIndex(
+            let deleteIndex = state.screams.findIndex(
                 (scream) => scream.screamId === action.payload
             );
-            state.screams.splice(index, 1);
+            let newScreams = [...state.screams.slice(0,deleteIndex),...state.screams.slice(deleteIndex + 1)]
             return {
-                ...state
+                ...state,
+                screams: newScreams
             };
         case POST_SCREAM:
             return {
