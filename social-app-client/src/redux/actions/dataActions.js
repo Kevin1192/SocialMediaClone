@@ -67,26 +67,36 @@ export const postScream = (newScream) => (dispatch) => {
 }
 
 export const likeScream = (screamId) => (dispatch) => {
-    axios
-        .get(`/scream/${screamId}/like`)
-        .then((res) => {
-            dispatch({
-                type: LIKE_SCREAM,
-                payload: res.data
-            })
-        })
-        .catch((err) => console.log(err));
+   axios
+     .get(`/scream/${screamId}/like`)
+     .then(() => {
+       axios
+         .get(`/scream/${screamId}`)
+         .then((res) => {
+           dispatch({
+             type: LIKE_SCREAM,
+             payload: res.data,
+           });
+         })
+         .catch((err) => console.log(err));
+     })
+     .catch((err) => console.log(err)); 
 };
 
 export const unlikeScream = (screamId) => (dispatch) => {
     axios
         .get(`/scream/${screamId}/unlike`)
-        .then((res) => {
-            dispatch({
-                type: UNLIKE_SCREAM,
-                payload: res.data
-            })
+        .then(() => {
+            axios.get(`/scream/${screamId}`)
+                .then((res) => {
+                    dispatch({
+                      type: UNLIKE_SCREAM,
+                      payload: res.data,
+                    });
+                })
+                .catch((err) => console.log(err));
         })
+        .catch((err) => console.log(err));
 }
 
 export const submitComment = (screamId, commentData) => (dispatch) => {
@@ -100,6 +110,7 @@ export const submitComment = (screamId, commentData) => (dispatch) => {
             dispatch(clearErrors());
         })
         .catch((err) => {
+            console.log(err);
             dispatch({
                 type: SET_ERRORS,
                 payload: err.response.data
