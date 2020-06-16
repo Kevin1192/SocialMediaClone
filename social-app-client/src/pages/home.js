@@ -13,7 +13,7 @@ class home extends Component {
         this.props.getScreams();
     }
     render() {
-        const { screams } = this.props;
+        const { screams } = this.props.data;
         const postScreams = screams.map(scream => (
             <Scream key={scream.screamId} scream={scream} />
         ))
@@ -33,7 +33,7 @@ class home extends Component {
 
 
 export const mapStateToProps = (state) => ({
-    screams: state.data.screams
+    data: state.data
 })
 
 export default connect(mapStateToProps, { getScreams })(home);
