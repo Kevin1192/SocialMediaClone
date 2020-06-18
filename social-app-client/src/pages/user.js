@@ -4,8 +4,6 @@ import Scream from '../components/Scream';
 import Grid from '@material-ui/core/Grid';
 import StaticProfile from '../components/StaticProfile';
 
-import ScreamSkeleton from '../util/ScreamSkeleton';
-import ProfileSkeleton from '../util/ProfileSkeleton';
 
 import { connect } from 'react-redux';
 import { getUserData} from '../redux/actions/dataActions';

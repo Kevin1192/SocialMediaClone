@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import PropTypes from "prop-types";
 // MUI stuff
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -44,7 +43,7 @@ class Notifications extends Component {
             notifications.filter((not) => not.read === false).length > 0 ? (notificationsIcon = (
                 <Badge badgeContent={
                     notifications.filter((not) => not.read === false).length
-                } color='secondary'>
+                } color='primary'>
                     <NotificationsIcon />
                 </Badge>
             ))

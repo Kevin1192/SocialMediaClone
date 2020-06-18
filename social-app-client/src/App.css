@@ -13,13 +13,18 @@ body {
 
 .nav-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .nav-container svg {
   color: #fff;
 }
-
+.nav-container .logo {
+  font-family: 'Shrikhand';
+  font-weight: 200;
+  font-size: 20px;
+  color: #fff
+}
 a {
   text-decoration: none;
 }

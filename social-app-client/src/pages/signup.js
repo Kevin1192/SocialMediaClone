@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
-import axios from "axios";
 import { Link } from "react-router-dom";
+
+// Icon
+import OwlIcon from '../imgs/owl.svg';
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -61,7 +63,7 @@ class signup extends Component {
         <Grid container className={classes.form}>
           <Grid item sm />
           <Grid item sm>
-            <p>icon</p>
+            <img src={OwlIcon} alt="Icon" className={classes.img} />
             <Typography variant="h2" className={classes.pageTitle}>
               Signup
             </Typography>

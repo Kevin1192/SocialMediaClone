@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MyButton from '../util/MyButton';
 import PostScream from './PostScream';
-import Notifications from './Notifications';
+
 //MUI
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,6 +17,8 @@ class Navbar extends Component {
         return (
           <AppBar>
             <Toolbar className="nav-container">
+              <Link to="/" className='logo'>Owl</Link>
+              <div>
               {authenticated ? (
                 <Fragment>
                   <PostScream />
@@ -25,7 +27,6 @@ class Navbar extends Component {
                       <HomeIcon />
                     </MyButton>
                   </Link>
-                  <Notifications />
                 </Fragment>
               ) : (
                 <Fragment>
@@ -40,6 +41,7 @@ class Navbar extends Component {
                   </Button>
                 </Fragment>
               )}
+              </div>
             </Toolbar>
           </AppBar>
         );

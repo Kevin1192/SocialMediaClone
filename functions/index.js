@@ -21,7 +21,8 @@ const {
 
 const express = require("express");
 const app = express();
-
+const cors = require('cors');
+app.use(cors());
 const FBAuth = require("./util/fbAuth");
 
 const { db } = require("./util/admin");

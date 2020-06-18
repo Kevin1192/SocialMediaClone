@@ -14,6 +14,10 @@ export default {
   image: {
     margin: '20px auto 20px auto'
   },
+  img: {
+    width: '60px',
+    marginTop: '25px'
+  },
   pageTitle: {
     margin: '10px auto 10px auto'
   },
